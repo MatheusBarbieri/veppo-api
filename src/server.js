@@ -5,7 +5,7 @@ const apiErrorHandler = require('api-error-handler')
 const logger = require('morgan')
 const http = require('http')
 const routes = require('./routes')
-const config = require('../config')
+const config = require('./config')
 
 const app = express()
 const { port = 5000 } = config
@@ -17,6 +17,12 @@ app.use(logger('combined'))
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 app.use(cookieParser())
+
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*')
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept')
+  next()
+})
 
 app.use('/', routes)
 
