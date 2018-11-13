@@ -1,11 +1,15 @@
 const cities = [
   {
     label: 'Taquari',
-    value: 'taquari'
+    value: 'taquari',
+    basePrice: 20,
+    kilogramPrice: 5
   },
   {
     label: 'Torres',
-    value: 'torres'
+    value: 'torres',
+    basePrice: 15,
+    kilogramPrice: 2
   }
 ]
 
