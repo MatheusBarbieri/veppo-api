@@ -5,6 +5,7 @@ const apiErrorHandler = require('api-error-handler')
 const logger = require('morgan')
 const http = require('http')
 const routes = require('./routes')
+const freights = require('./freights')
 const config = require('./config')
 
 const app = express()
@@ -25,6 +26,7 @@ app.use((req, res, next) => {
 })
 
 app.use('/', routes)
+app.use('/', freights)
 
 app.use((req, res, next) => {
   next(createError(404))
