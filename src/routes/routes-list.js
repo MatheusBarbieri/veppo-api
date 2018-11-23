@@ -9,10 +9,10 @@ const routes = [
     route: 'Taquari/Tabaí',
     mode: 'Semi-direto',
     partTime: '07:15',
-    price: 24,
-    priceWithInsurance: 25,
+    price: '24,00',
+    priceWithInsurance: '25,00',
     travelDistance: 94,
-    travelTime: 100
+    travelTime: 94
   },
   {
     city: 'taquari',
@@ -22,8 +22,8 @@ const routes = [
     route: 'Triunfo/Taquari',
     mode: 'Semi-direto',
     partTime: '07:40',
-    price: 20,
-    priceWithInsurance: 21,
+    price: '20,00',
+    priceWithInsurance: '21,00',
     travelDistance: 105,
     travelTime: 120
   },
@@ -34,10 +34,10 @@ const routes = [
     route: 'Taquari/Tabaí',
     mode: 'Comum',
     partTime: '09:15',
-    price: 22,
-    priceWithInsurance: 23,
+    price: '22,00',
+    priceWithInsurance: '23,00',
     travelDistance: 94,
-    travelTime: 100
+    travelTime: 61
   },
   {
     city: 'taquari',
@@ -46,10 +46,10 @@ const routes = [
     route: 'Taquari/Lajeado',
     mode: 'Direto',
     partTime: '09:40',
-    price: 30,
-    priceWithInsurance: 32,
+    price: '30,00',
+    priceWithInsurance: '32,00',
     travelDistance: 94,
-    travelTime: 100
+    travelTime: 60
   },
   {
     city: 'taquari',
@@ -58,10 +58,10 @@ const routes = [
     route: 'Taquari/Tabaí',
     mode: 'Comum',
     partTime: '12:00',
-    price: 22,
-    priceWithInsurance: 23,
+    price: '22,00',
+    priceWithInsurance: '23,00',
     travelDistance: 94,
-    travelTime: 100
+    travelTime: 45
   },
   {
     city: 'taquari',
@@ -71,8 +71,8 @@ const routes = [
     route: 'Taquari/Tabaí',
     mode: 'Comum',
     partTime: '15:00',
-    price: 22,
-    priceWithInsurance: 23,
+    price: '22,00',
+    priceWithInsurance: '23,00',
     travelDistance: 94,
     travelTime: 100
   },
@@ -84,8 +84,8 @@ const routes = [
     route: 'Triunfo/Taquari',
     mode: 'Semi-direto',
     partTime: '15:00',
-    price: 24,
-    priceWithInsurance: 26,
+    price: '24,00',
+    priceWithInsurance: '26,00',
     travelDistance: 105,
     travelTime: 120
   },
@@ -97,8 +97,8 @@ const routes = [
     route: 'Taquari',
     mode: 'Direto',
     partTime: '17:30',
-    price: 26,
-    priceWithInsurance: 27,
+    price: '26,00',
+    priceWithInsurance: '27,00',
     travelDistance: 94,
     travelTime: 100
   },
@@ -109,8 +109,8 @@ const routes = [
     route: 'Taquari/Lajeado',
     mode: 'Direto',
     partTime: '19:10',
-    price: 30,
-    priceWithInsurance: 32,
+    price: '30,00',
+    priceWithInsurance: '32,00',
     travelDistance: 94,
     travelTime: 100
   },
@@ -123,8 +123,8 @@ const routes = [
     route: 'Torres/Tramandaí',
     mode: 'Semi-direto',
     partTime: '07:15',
-    price: 24,
-    priceWithInsurance: 25,
+    price: '24,00',
+    priceWithInsurance: '25,00',
     travelDistance: 94,
     travelTime: 100
   },
@@ -136,8 +136,8 @@ const routes = [
     route: 'Torres/Tramandaí',
     mode: 'Comum',
     partTime: '09:15',
-    price: 22,
-    priceWithInsurance: 23,
+    price: '22,00',
+    priceWithInsurance: '23,00',
     travelDistance: 94,
     travelTime: 100
   },
@@ -149,8 +149,8 @@ const routes = [
     route: 'Torres/Tramandaí',
     mode: 'Comum',
     partTime: '12:00',
-    price: 22,
-    priceWithInsurance: 23,
+    price: '22,00',
+    priceWithInsurance: '23,00',
     travelDistance: 94,
     travelTime: 100
   },
@@ -161,8 +161,8 @@ const routes = [
     route: 'Torres/Tramandaí',
     mode: 'Comum',
     partTime: '15:00',
-    price: 22,
-    priceWithInsurance: 23,
+    price: '22,00',
+    priceWithInsurance: '23,00',
     travelDistance: 94,
     travelTime: 100
   },
@@ -173,8 +173,8 @@ const routes = [
     route: 'Torres/Tramandaí',
     mode: 'Direto',
     partTime: '17:30',
-    price: 26,
-    priceWithInsurance: 27,
+    price: '26,00',
+    priceWithInsurance: '27,00',
     travelDistance: 94,
     travelTime: 100
   }
@@ -184,5 +184,7 @@ module.exports = (req, res) => {
   const { city } = req.query
   const routeList = _.compact(_.map(routes,
     (route) => (route.city == city ? route : null)))
-  res.send(JSON.stringify(routeList))
+  setTimeout(() => {
+    res.send(JSON.stringify(routeList))
+  }, 1500)
 }
