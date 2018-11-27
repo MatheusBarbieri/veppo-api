@@ -1,7 +1,16 @@
 const _ = require('lodash')
 
+const routeId = (function routeIdClosure() {
+  let id = 3000
+  return () => {
+    id += 3
+    return id
+  }
+}())
+
 const routes = [
   {
+    routeId: routeId(),
     city: 'taquari',
     isTarget: true,
     weekDays: [2, 3, 4, 5, 6],
@@ -15,6 +24,7 @@ const routes = [
     travelTime: 94
   },
   {
+    routeId: routeId(),
     city: 'taquari',
     isTarget: true,
     weekDays: [4, 5, 6],
@@ -28,6 +38,7 @@ const routes = [
     travelTime: 120
   },
   {
+    routeId: routeId(),
     city: 'taquari',
     weekDays: [2, 3, 4, 5, 6],
     company: 'Fátima',
@@ -40,6 +51,7 @@ const routes = [
     travelTime: 61
   },
   {
+    routeId: routeId(),
     city: 'taquari',
     weekDays: [1, 2, 3, 4, 5, 6, 7],
     company: 'Azul',
@@ -52,6 +64,7 @@ const routes = [
     travelTime: 60
   },
   {
+    routeId: routeId(),
     city: 'taquari',
     weekDays: [2, 3, 4, 5, 6, 7],
     company: 'Fátima',
@@ -64,6 +77,7 @@ const routes = [
     travelTime: 45
   },
   {
+    routeId: routeId(),
     city: 'taquari',
     isTarget: true,
     weekDays: [2, 3, 4, 5, 6, 7],
@@ -77,6 +91,7 @@ const routes = [
     travelTime: 100
   },
   {
+    routeId: routeId(),
     city: 'taquari',
     isTarget: true,
     weekDays: [1, 7],
@@ -90,6 +105,7 @@ const routes = [
     travelTime: 120
   },
   {
+    routeId: routeId(),
     city: 'taquari',
     isTarget: true,
     weekDays: [1, 7],
@@ -103,6 +119,7 @@ const routes = [
     travelTime: 100
   },
   {
+    routeId: routeId(),
     city: 'taquari',
     weekDays: [1, 7],
     company: 'Azul',
@@ -116,6 +133,7 @@ const routes = [
   },
 
   {
+    routeId: routeId(),
     city: 'torres',
     isTarget: true,
     weekDays: [2, 3, 4, 5, 6],
@@ -129,6 +147,7 @@ const routes = [
     travelTime: 100
   },
   {
+    routeId: routeId(),
     city: 'torres',
     isTarget: true,
     weekDays: [2, 3, 4, 5, 6],
@@ -142,6 +161,7 @@ const routes = [
     travelTime: 100
   },
   {
+    routeId: routeId(),
     city: 'torres',
     isTarget: true,
     weekDays: [2, 3, 4, 5, 6, 7],
@@ -155,6 +175,7 @@ const routes = [
     travelTime: 100
   },
   {
+    routeId: routeId(),
     city: 'torres',
     weekDays: [2, 3, 4, 5, 6, 7],
     company: 'Fátima',
@@ -167,6 +188,7 @@ const routes = [
     travelTime: 100
   },
   {
+    routeId: routeId(),
     city: 'torres',
     weekDays: [1, 7],
     company: 'Fátima',
